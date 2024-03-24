@@ -1,0 +1,15 @@
+{
+  "name": "exceleduconsult",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.defaultconfig.js",
+  "scripts": {
+    "code": "tailwind -i ./static/src/input.css -o ./static/src/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
