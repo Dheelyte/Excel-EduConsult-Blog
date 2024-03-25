@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
+    'ckeditor_uploader',
     'blog',
 ]
 
@@ -115,6 +117,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+
+MEDIA_ROOT = 'media/'
+CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [

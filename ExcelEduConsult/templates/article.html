@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>Posted: {{ post.date_posted | date:"j M, Y" }}</p>
+    <p>Category: <a href="{% url 'tag' post.tag.slug %}">{{ post.tag }}</a></p>
+    <img src="{{ post.thumbnail }}" alt="{{ post.title }}">
+    <p>{{ post.content | safe }}</p>
+
+    <h2>Share To</h2>
+    <a href="https://twitter.com/intent/tweet?url={{ request.scheme }}://{{ request.META.HTTP_HOST }}{% url 'blog-detail' post.slug %}">Twitter</a>
+    <a href="https://api.whatsapp.com/send?text={{ post.title }}. {{ request.scheme }}://{{ request.META.HTTP_HOST }}{% url 'blog-detail' post.slug %}">WhatsApp</a>
+    <a href="http://www.facebook.com/sharer/sharer.php?u={{ request.scheme }}://{{ request.META.HTTP_HOST }}{% url 'blog-detail' post.slug %}">Facebook</a>
+    
+
+</body>
+</html>
