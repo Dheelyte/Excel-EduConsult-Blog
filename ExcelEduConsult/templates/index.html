@@ -6,45 +6,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Excel Consort</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'src/output.css' %}">
+  <link rel="stylesheet" href="../static/css/main_animations.css">
   <style>
-    /*.gradient {
-      background-image: url("../static/images/images_main/bg-header-desktop.svg");
+    h1, h2, h3, h4, h5, h6{
+      font-family: Roboto;
+    }
+    ul {
+      font-family: Nunito;
+      font-weight: 800;
+      font-size: 26px;
+      color: rgb(1, 2, 20);
+    }
+
+    .gradient {
+      background:linear-gradient(-360deg, rgba(255, 98, 0, 0.257), rgba(255, 98, 0, 0.233)), url("../static/images/images_main/28470.jpg");
       background-size: cover;
-      background-repeat: no-repeat;
-      backdrop-filter: blur(10px);
-    }*/
+      background-repeat: repeat;
+      -webkit-filter: blur(4px);
+      background-position-y: -200px;
+      color: rgb(165, 233, 255);
+    }
+
+    .simp_links::after{
+      content: '';
+      height: 5px;
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+      border-radius: 20px;
+      background-color: rgb(40, 15, 1);
+      opacity: 0.2;
+      transform: scaleX(0);
+      transition: all 0.2s linear 0.05s;
+     }
+     .simp_links:hover:after{
+      transform: scaleX(1);
+      opacity: 1;
+     }
   </style>
 </head>
-<body class="m-0 px-0 box-content h-[1000px]">
-  
-  <header class="w-full pt-5 flex items-center justify-between text-white absolute top-0">
-    <div>
-      <img src="../static/images/images_main/logo.png" alt="Logo" class="h-[150px] ml-[-20px]">
+<body class="m-0 px-0 box-content h-[1000px] bg-red-100">
+  <div class="w-full h-[350px] gradient"></div>
+
+  <header class="left-0 right-0 pt-5 flex items-center justify-between text-blue-950 absolute top-0">
+    <div class="relative w-[100px]">
+      <img src="../static/images/images_main/logo.png" alt="Logo" class="h-[130px]">
     </div>
-    <nav>
-      <ul class="list-none flex gap-5 -ml-16 text-sm font-semibold">
-        <li>Home</li>
-        <li>Category</li>
-        <li>About</li>
-        <li>Contact</li>
+    <nav class="relative">
+      <ul class="list-none flex gap-5 top_navigation">
+        <li class="simp_links">Home</li>
+        <li class="ml-5 simp_links">Category</li>
+        <li class="ml-5 simp_links">About</li>
+        <li class="ml-5 simp_links">Contact</li>
       </ul>
     </nav>
-    <div class="mr-10 flex">
-      <input type="text" placeholder="Search" class="py-3 grow px-8 rounded-l-full border-none shadow-inner shadow-gray-400">
-      <button class="rounded-r-full border-none py-3 px-8">search</button>
+    <div class="pr-10 flex gap-3 justify-end">
+      <input type="text" placeholder="Search" class="w-[100%] py-4 px-5 rounded-full border-none shadow-inner shadow-gray-200 text-md">
+      <button class="rounded-full border-none py-4 px-5 bg-red-900 flex justify-center items-center">
+        <img src="../static/images/images_main/search_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+      </button>
     </div>
   </header>
-  <div class="w-full h-[350px] bg-pink-200">
-    <!-- <img src="../static/images/images_main/bg-header-desktop.svg" alt="" class=""> -->
-  </div>
+  
 
-  <main class=" grid justify-items-center">
-    <!-- slide show -->
-    <div class="w-[80%] h-[500px] bg-blue-200 absolute top-[180px]"></div>
+  <main class="grid justify-items-center">
+    <!-- slide show container -->
+    <div class="w-[80%] h-[550px] absolute top-[160px] flex overflow-hidden rounded-sm">
+      <div class="slide flex">
+        <div class="w-[100%] h-[550px] relative">
+          <img src="../static/images/images_main/markus-winkler-aId-xYRTlEc-unsplash.jpg" alt=" an individual reading news" class="w-[1080px] h-full object-cover">
+          <!-- overlay -->
+          <div class="bg-black opacity-45 absolute top-0 left-0 right-0 bottom-0 z-10"></div>
+          <div class="slider-image-text">
+            <h1>LATEST NEWS</h1>
+          </div>
+        </div>
+        <div class="w-[100%] h-[550px] relative">
+          <img src="../static/images/images_main/soundtrap-d0sXdsCnhF8-unsplash.jpg" alt="A musician creating music" class="w-[1080px] h-full object-cover">
+          <!-- overlay -->
+          <div class="bg-black opacity-45 absolute top-0 left-0 right-0 bottom-0"></div>
+          <div class="slider-image-text">
+            <h1>ENTERTAINMENT</h1>
+          </div>
+        </div>
+        <div class="w-[100%] h-[550px] relative">
+          <img src="../static/images/images_main/clay-banks-GX8KBbVmC6c-unsplash.jpg" alt="A Student studying" class=" w-[1080px] h-full object-cover">
+          <!-- overlay -->
+          <div class="bg-black opacity-45 absolute top-0 left-0 right-0 bottom-0"></div>
+          <div class="slider-image-text">
+            <h1 class="leading-[3rem]">EDUCATIONAL CONSULT</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- overlay -->
+    
 
     <!-- page content -->
-    <div class="w-[50%] h-[1px] bg-gray-400 mb-[50px] mt-[420px]"></div>
+    <div class="w-[50%] h-[1px] bg-gray-400 mb-[50px] mt-[450px]"></div>
 
     <section class="w-full grid justify-items-center">
   <div>
